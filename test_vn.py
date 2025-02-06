@@ -2,14 +2,14 @@ from argparse import ArgumentParser
 import numpy as np
 import torch
 import torch.nn as nn
-from model import Cnn
+from model_lab1 import Cnn
 import cv2
 from torchsummary import summary
 
 def get_args():  # using for change params on terminal instead of open scrip
     parser = ArgumentParser(description="Cnn Inference")
     parser.add_argument("--image_size", "-i", type=int, default=224, help="Images size")
-    parser.add_argument("--image_path", "-p", type=str, default=None, help="Path for testing image")
+    parser.add_argument("--image_path", "-t", type=str, default=None, help="Path for testing image")
     parser.add_argument("--checkpoint", "-c", type=str, default="trained_model/best_cnn.pt", help="File_Trained")  # path where trained
     args = parser.parse_args()
     return args
@@ -24,8 +24,9 @@ if __name__ == '__main__':
         device = torch.device("cpu")
 
     model = Cnn(num_classes=4).to(device)  # to(device) -> set cuda
-    summary(model, (3, 224, 224))
-    if args.checkpoint:
+    summary(model, (3, 224, 224))  # Show architecture: how many layer - decrease
+
+    if args.checkpoint:  # Load checkpoint to take best model
         checkpoint = torch.load(args.checkpoint)  # Syntax load model in torch
         model.load_state_dict(checkpoint["model"])
     else:
