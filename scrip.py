@@ -201,6 +201,10 @@ if __name__ == '__main__':
         all_labels = [label.item() for label in all_labels]
         all_prediction = [predict.item() for predict in all_prediction]
 
+        # Classification - Report
+        report = classification_report(all_labels, all_prediction, target_names=test_dataset.categories)
+        print(report)
+
         # Confusion matrix
         plot_confusion_matrix(writer, confusion_matrix(all_labels, all_prediction), class_names=test_dataset.categories, epoch=epoch)
         # test_dataset.categories : --> Extract list of classes
