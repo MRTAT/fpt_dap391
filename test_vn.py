@@ -5,11 +5,12 @@ import torch.nn as nn
 from model_lab1 import Cnn
 import cv2
 from torchsummary import summary
+from sklearn.metrics import classification_report
 
 def get_args():  # using for change params on terminal instead of open scrip
     parser = ArgumentParser(description="Cnn Inference")
     parser.add_argument("--image_size", "-i", type=int, default=224, help="Images size")
-    parser.add_argument("--image_path", "-t", type=str, default=None, help="Path for testing image")
+    parser.add_argument("--image_path", "-t", type=str, default="/home/mrly/Documents/ai_vietnguyen/deeplearning/fptu/dap/lab_1/code/images_test/normal_1.jpeg", help="Path for testing image")
     parser.add_argument("--checkpoint", "-c", type=str, default="trained_model/best_cnn.pt", help="File_Trained")  # path where trained
     args = parser.parse_args()
     return args
@@ -53,7 +54,7 @@ if __name__ == '__main__':
     max_idx = torch.argmax(prob)
     predicted_class = categories[max_idx]
     print("Test image is:| {} | with probability score: {}".format(predicted_class, prob[0, max_idx]))
-    cv2.imshow("{}:{:.2f}%".format(predicted_class, prob[0, max_idx]*100), ori_image)  # cause prob.shape -> [1, 10] -> 2dim -> max just one dim
+    cv2.imshow("{} --> {:.2f}%".format(predicted_class, prob[0, max_idx]*100), ori_image)  # cause prob.shape -> [1, 10] -> 2dim -> max just one dim
     # so using -> prob[0, max_idx]*100) -> disable the first dim  | *100 cal percent
     cv2.waitKey(0)
 
