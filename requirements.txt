@@ -5,3 +5,7 @@ streamlit
 Pillow
 numpy
 opencv-python
+
+apt-get update && apt-get install -y \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/* \
