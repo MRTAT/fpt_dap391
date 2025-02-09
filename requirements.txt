@@ -1,11 +1,7 @@
+streamlit==1.42.0
 torch==2.1.0+cpu
 torchvision==0.16.0+cpu
 -f https://download.pytorch.org/whl/torch_stable.html
-streamlit
-Pillow
-numpy
-opencv-python
-
-apt-get update && apt-get install -y \
-    python3-pip \
-    && rm -rf /var/lib/apt/lists/* \
+Pillow==10.2.0
+numpy==1.26.3
+opencv-python==4.9.0.80
