@@ -1,7 +1,5 @@
-torch==2.1.0+cpu
-torchvision==0.16.0+cpu
--f https://download.pytorch.org/whl/torch_stable.html
-streamlit
-Pillow
-numpy
-opencv-python
+torch>=2.0.0
+torchvision>=0.15.0
+streamlit>=1.30.0
+Pillow>=9.0.0
+google-generativeai>=0.3.0
