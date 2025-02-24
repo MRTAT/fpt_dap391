@@ -192,13 +192,13 @@ if __name__ == '__main__':
             labels = labels.to(device)
 
             with torch.no_grad():
-                predict = model(images)
+                predict = model(images)  # return probability of 10 classes
 
                 indices = torch.argmax(predict, dim=1)
                 all_prediction.extend(indices)
                 loss = criterion(predict, labels)
 
-        all_labels = [label.item() for label in all_labels]
+        all_labels = [label.item() for label in all_labels]  # using for report
         all_prediction = [predict.item() for predict in all_prediction]
 
         # Classification - Report

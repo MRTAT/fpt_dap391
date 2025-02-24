@@ -30,6 +30,8 @@ COPY model_lab1.py ./model_lab1.py
 COPY scrip.py ./scrip.py
 COPY test_vn.py ./test_vn.py
 COPY covid-xray-app.py ./covid-xray-app.py
+#COPY trained_model/last_cnn.pt ./trained_model/last_cnn.pt
+COPY best_cnn.pt ./best_cnn.pt
 #-------------------------------------------------------
 
 
