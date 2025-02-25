@@ -7,16 +7,11 @@ from PIL import Image
 from model_lab1 import Cnn
 
 
+# Gemini API setup
 def setup_gemini():
     genai.configure(api_key='AIzaSyDyG1I9Z0ZaID1EsSd9yBeaqxnWGFOC7sI')
-    try:
-        models = genai.list_models()  # Kiểm tra mô hình có sẵn
-        print("Available models:", models)
-        model = genai.GenerativeModel('gemini-pro')
-        return model
-    except Exception as e:
-        print(f"Error listing models: {e}")
-        return None
+    model = genai.GenerativeModel('gemini-pro')
+    return mode
 
 
 # Disease prediction using Gemini
