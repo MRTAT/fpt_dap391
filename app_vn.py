@@ -12,7 +12,7 @@ def setup_gemini():
     try:
         models = genai.list_models()  # Kiểm tra mô hình có sẵn
         print("Available models:", models)
-        model = genai.GenerativeModel('gemini-pro')
+        model = genai.GenerativeModel('gemini-1.5-pro-latest')
         return model
     except Exception as e:
         print(f"Error listing models: {e}")
