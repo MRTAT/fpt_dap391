@@ -25,24 +25,12 @@ def get_gemini_response(model, symptoms, lang="en"):
         Based on the following symptoms, suggest possible medical conditions and provide brief explanations:
         Symptoms: {symptoms}
 
-        Please format your response as follows:
-        1. Most likely conditions
-        2. Brief explanation for each condition
-        3. General recommendations
-        4. Treatment details and the name of the medication that should be used
-
         Note: This is not a medical diagnosis. Please consult a healthcare professional for proper medical advice.
         """
     else:  # Vietnamese
         prompt = f"""
         Dựa trên các triệu chứng sau đây, hãy đề xuất các tình trạng y tế có thể xảy ra và cung cấp giải thích ngắn gọn:
         Triệu chứng: {symptoms}
-
-        Vui lòng định dạng phản hồi của bạn như sau:
-        1. Các tình trạng có khả năng xảy ra nhất
-        2. Giải thích ngắn gọn cho từng tình trạng
-        3. Các khuyến nghị chung
-        4. Chi tiết về cách điều trị và các tên của loại thuốc nên sử dụng
 
         Lưu ý: Đây không phải là chẩn đoán y tế. Vui lòng tham khảo ý kiến của chuyên gia y tế để được tư vấn y tế thích hợp.
         """
