@@ -24,15 +24,13 @@ def get_gemini_response(model, symptoms, lang="en"):
         prompt = f"""
         Based on the following symptoms, suggest possible medical conditions and provide brief explanations:
         Symptoms: {symptoms}
-
-        Note: This is not a medical diagnosis. Please consult a healthcare professional for proper medical advice.
+        
         """
     else:  # Vietnamese
         prompt = f"""
         Dựa trên các triệu chứng sau đây, hãy đề xuất các tình trạng y tế có thể xảy ra và cung cấp giải thích ngắn gọn:
         Triệu chứng: {symptoms}
 
-        Lưu ý: Đây không phải là chẩn đoán y tế. Vui lòng tham khảo ý kiến của chuyên gia y tế để được tư vấn y tế thích hợp.
         """
 
     try:
